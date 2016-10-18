@@ -69,12 +69,14 @@ class polynome():
         self.coeff = self.coeff[1:]
 
 def afficher(self):
-    coeff = self.coeff()
-    coeff.reverse
-    puissance = self.puissance
-    puissance.reverse()
-    if self.puissance[1] == 1:
-        affichage = self.coef[0]
-    for i in range (len(self.puissance)):
-        if self.puissance[i] == 1 :
-            a
+    '''
+    Cette fonction affiche le polynome d'une façon compréhensible par l'utilisateur
+    '''
+    coeff = self.tab1
+    puissance = self.tab0
+    affichage = [0] * len(puissance)
+    for i in range(len(puissance)):
+        affichage[i] = "{0}x^{1}".format(self.coeff[i],self.puissance[i])
+    print (join(affichage))
+    
+    
