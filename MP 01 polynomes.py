@@ -1,34 +1,5 @@
 # https://github.com/Elliot-Blanchard/MP-01-Polynomes
 
-##1ere méthode(1 seule liste/vecteur)
-##class Polynome():
-##
-##    def __init__(self,couples):
-##
-##        self.couples = couples
-##        
-##        self.coeff = [0] * len ( couples )
-##        for i in range (len ( couples ) ) :
-##            if i % 2 == 0 :
-##                self.coeff[i] = 0
-##            else:
-##                self.coeff[i] = couples[ i - 1 ]
-##
-##        self.puissance = [0] * len ( couples )
-##        for i in range (len ( couples)):
-##            if self.coeff[i] == 0:
-##                self.puissance[i] = 0
-##            else:
-##                self.puissance[i] = 1
-##
-##def afficher(self):
-##    
-##    afficher(nom du polynôme)
-##    Cette fonction affiche le polynome d'une façon compréhensible par l'utilisateur
-##    
-##    print ( "({0}x^{1})+({2}x^{3})+({4}x^{5})".format(self.couples[0],self.couples[1],self.couples[2],self.couples[3],self.couples[4],self.couples[5]))
-##
-
 class polynome():
     
     def __init__(self,couples):
@@ -74,9 +45,50 @@ def afficher(self):
     '''
     coeff = self.tab1
     puissance = self.tab0
+    coeff.reverse()
+    puissance.reverse()
     affichage = [0] * len(puissance)
     for i in range(len(puissance)):
-        affichage[i] = "{0}x^{1}".format(self.coeff[i],self.puissance[i])
-    print (join(affichage))
-    
-    
+        if i != 0:
+            if coeff[i] >=0:
+                coeff[i] = '+' + str(coeff[i])
+        if puissance[i] >=2:
+            affichage[i] = "{0}x^{1}".format(coeff[i],puissance[i])
+        else:
+            if puissance[i] == 1:
+                 affichage[i] = "{0}x".format(coeff[i])
+            else:
+                affichage[i] = str(coeff[i])
+    print (''.join(affichage))
+
+def getcoeff (self,nb):
+    print (self.tab1[nb])
+
+def getpuissance (self,nb):
+    print (self.tab0[nb])
+
+def evalue (self,nb):
+    resultat = 0
+    for i in range (len(self.tab0)):
+        puissance = nb ** self.tab0[i]
+        monome = puissance * self.tab1[i]
+        resultat = resultat + monome
+    print(resultat)
+
+def dmax (self):
+    degre = self.tab0
+    degre.reverse()
+    print (degre[0])
+
+def monome (self,nb):
+    print(self.tab1[self.tab0.index(nb)])
+
+def somme (poly1,poly2):
+    tabsomme = [0] * 2
+    tabsomme[0] = poly1.coeff
+    tabsomme[1] = poly2.coeff
+    tabsomme[0].reverse()
+    tabsomme[1].reverse()
+    somme = list(map(sum, zip(*tabsomme)))
+    print (somme)
+        
