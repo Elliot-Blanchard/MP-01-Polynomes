@@ -72,13 +72,14 @@ def evalue (self,nb):
     for i in range (len(self.tab0)):
         puissance = nb ** self.tab0[i]
         monome = puissance * self.tab1[i]
-        resultat = resultat + monome
+        resultat = float(resultat) + float(monome)
     print(resultat)
 
 def dmax (self):
     degre = self.tab0
     degre.reverse()
     print (degre[0])
+    return degre[0]
 
 def monome (self,nb):
     print(self.tab1[self.tab0.index(nb)])
@@ -101,5 +102,12 @@ def difference (poly1,poly2):
     print (diff)
 
 def racines (self):
-    if dmax(self) != 2:
+    degre = dmax(self)
+    if degre != 2:
         print ("Le polynôme doit être de degré 2 pour pouvoir en calculer les racines")
+    else :
+        delta = (self.coeff[1]**2) - 4 * self.coeff[0] * self.coeff[2]
+        print (delta)
+        
+    
+        
