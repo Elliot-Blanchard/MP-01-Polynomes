@@ -78,7 +78,6 @@ def evalue (self,nb):
 def dmax (self):
     degre = self.tab0
     degre.reverse()
-    print (degre[0])
     return degre[0]
 
 def monome (self,nb):
@@ -108,6 +107,8 @@ def racines (self):
     else :
         delta = (self.coeff[1]**2) - 4 * self.coeff[0] * self.coeff[2]
         print (delta)
-        
+    self.racine1 = ((-self.coeff[1])- sqrt(delta))/(2*self.coeff[0])
+    self.racine2 = ((-self.coeff[1])+ sqrt(delta))/(2*self.coeff[0])
+    print (self.racine1, self.racine2)
     
         
