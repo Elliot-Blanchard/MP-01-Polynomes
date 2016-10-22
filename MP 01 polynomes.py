@@ -1,5 +1,5 @@
 # https://github.com/Elliot-Blanchard/MP-01-Polynomes
-
+from math import sqrt
 class polynome():
     
     def __init__(self,couples):
@@ -87,8 +87,19 @@ def somme (poly1,poly2):
     tabsomme = [0] * 2
     tabsomme[0] = poly1.coeff
     tabsomme[1] = poly2.coeff
-    tabsomme[0].reverse()
-    tabsomme[1].reverse()
     somme = list(map(sum, zip(*tabsomme)))
+    somme.reverse()
     print (somme)
-        
+
+def difference (poly1,poly2):
+    negPoly = [ -x for x in poly2.coeff]
+    tabdiff = [0] * 2
+    tabdiff[0] = poly1.coeff
+    tabdiff[1] = negPoly
+    diff = list(map(sum, zip(*tabdiff)))
+    diff.reverse()
+    print (diff)
+
+def racines (self):
+    if dmax(self) != 0:
+        print ("Le polynôme doit être de degré 2 pour pouvoir en calculer les racines")
