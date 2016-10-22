@@ -101,5 +101,5 @@ def difference (poly1,poly2):
     print (diff)
 
 def racines (self):
-    if dmax(self) != 0:
+    if dmax(self) != 2:
         print ("Le polynôme doit être de degré 2 pour pouvoir en calculer les racines")
